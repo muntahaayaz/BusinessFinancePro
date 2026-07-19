@@ -1,0 +1,91 @@
+%% Business Finance Pro v1.0 - Architecture Diagram
+%% Renders natively on GitHub. Also importable into draw.io via
+%% Extras > Edit Diagram > paste this Mermaid source, or use the
+%% draw.io Mermaid import plugin (Arrange > Insert > Advanced > Mermaid).
+
+graph TD
+    subgraph INPUT["User Input Layer (Visible Sheets)"]
+        QA["Quick Add<br/>7 fields + staging row"]
+        BI["Bills<br/>list card + add-a-bill"]
+        CL["Clients<br/>list card + add-an-invoice"]
+        GO["Goals<br/>list card + add-a-goal"]
+        ST["Settings<br/>11 editable fields"]
+    end
+
+    subgraph STAGE["Manual Commit Step (documented V1 limitation)"]
+        COPY["Copy staging row -> Paste as Values<br/>into hidden data table"]
+    end
+
+    subgraph DATA["Hidden, Protected Data Layer (9 Excel Tables)"]
+        T_TXN["tbl_Transactions"]
+        T_CAT["tbl_Categories"]
+        T_VEN["tbl_Vendors"]
+        T_BILL["tbl_Bills"]
+        T_CUST["tbl_Customers"]
+        T_INV["tbl_Invoices"]
+        T_GOAL["tbl_Goals"]
+        T_BP["tbl_BusinessProfile"]
+        T_SET["tbl_Settings"]
+    end
+
+    subgraph CALC["Calculation Engines (Hidden, Formula-Only)"]
+        CORE["_calc_Core<br/>Money In/Out, Net Cash Flow,<br/>Transaction Count, Average"]
+        HEALTH["_calc_Health<br/>Weighted Business Health<br/>scoring engine"]
+        ATT["_calc_Attention<br/>Prioritized action-item<br/>rule engine"]
+        INS["_calc_Insights<br/>Top-3 narrative<br/>rule engine"]
+    end
+
+    subgraph NAMES["Named Ranges (106 total) - the only interface between layers"]
+        NR["calcHealthTitle, calcMoneyInThisMonth,<br/>AttentionItem1-5*, InsightItem1-3*,<br/>Current*, rng*"]
+    end
+
+    subgraph PRESENT["Presentation Layer"]
+        HOME["Home Dashboard<br/>Business Health / Money In-Out /<br/>Needs Attention / Monday Briefing"]
+    end
+
+    QA --> COPY
+    BI --> COPY
+    CL --> COPY
+    GO --> COPY
+    COPY --> T_TXN
+    COPY --> T_BILL
+    COPY --> T_INV
+    COPY --> T_GOAL
+    ST -.direct formula mirror.-> T_BP
+    ST -.direct formula mirror.-> T_SET
+
+    T_TXN --> CORE
+    T_CAT -.structured refs.-> INS
+    T_VEN -.structured refs.-> INS
+    T_BILL -.structured refs.-> ATT
+    T_INV -.structured refs.-> ATT
+    T_GOAL -.structured refs.-> INS
+
+    CORE --> HEALTH
+    CORE --> ATT
+    CORE --> INS
+
+    HEALTH --> NR
+    ATT --> NR
+    INS --> NR
+    T_BP --> NR
+    T_SET --> NR
+
+    NR --> HOME
+    BI -.direct table read for list card.-> T_BILL
+    CL -.direct table read for list card.-> T_INV
+    GO -.direct table read for list card.-> T_GOAL
+
+    classDef inputStyle fill:#FBFAF7,stroke:#E4E2DA,color:#26211C
+    classDef stageStyle fill:#F0E6D2,stroke:#854F0B,color:#26211C
+    classDef dataStyle fill:#FFFFFF,stroke:#E4E2DA,color:#26211C
+    classDef calcStyle fill:#D9D6C9,stroke:#5F5E5A,color:#26211C
+    classDef nameStyle fill:#E4E2DA,stroke:#5F5E5A,color:#26211C
+    classDef presentStyle fill:#1D6E56,stroke:#1D6E56,color:#FFFFFF
+
+    class QA,BI,CL,GO,ST inputStyle
+    class COPY stageStyle
+    class T_TXN,T_CAT,T_VEN,T_BILL,T_CUST,T_INV,T_GOAL,T_BP,T_SET dataStyle
+    class CORE,HEALTH,ATT,INS calcStyle
+    class NR nameStyle
+    class HOME presentStyle

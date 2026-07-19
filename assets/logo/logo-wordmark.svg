@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="480" height="120">
+  <rect x="4" y="4" width="112" height="112" rx="24" fill="#1D6E56"/>
+  <polyline points="30,78 50,58 66,70 90,38" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="74,38 90,38 90,54" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="136" y="58" font-family="Segoe UI, Aptos, sans-serif" font-size="30" font-weight="500" fill="#26211C">Business Finance Pro</text>
+  <text x="136" y="86" font-family="Segoe UI, Aptos, sans-serif" font-size="16" font-weight="400" fill="#5F5E5A">Macro-free edition, built in Excel</text>
+</svg>
