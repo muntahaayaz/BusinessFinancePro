@@ -2,6 +2,23 @@
 
 All notable changes to Business Finance Pro are documented in this file.
 
+## [1.0.1] — Bug-fix release
+
+### Fixed
+- **Overdue/Upcoming status was frozen after saving a record.** Status was computed with `TODAY()` only in the staging row, so once the row was pasted as values it never updated (a bill due months ago still showed "Upcoming"). The Bills and Clients screens and the Needs Attention engine now calculate status live from the due date. The only status you set by hand is `Paid` (and `Void`/`Draft` for invoices).
+- **Overdue counts and totals** on the Home dashboard (`_calc_Attention`) now use the live status, with guards for blank due dates and Paid/Void/Draft records.
+- **Sample data went stale.** Sample transactions, bills, invoices and goal dates were fixed July 2026 dates, so the dashboard opened as "Getting started / $0" in any later month. Sample dates are now relative to today. Delete the sample rows before entering real data.
+- **Quick Add example did not link to its customer.** The example client was typed "Blue Harbor Café" (accent) but stored as "Blue Harbor Cafe", so the CustomerID came out blank. Fixed the example, and the Vendor / client dropdown now lists customers as well as vendors (new named range `PayeeNameList`).
+
+### Changed
+- Two more sample transactions added so the Home dashboard shows Money In, Money Out and a health rating on first open.
+- Version string in Settings updated to 1.0.1. Named ranges: 106 -> 107.
+
+### Tested
+- Recalculated with 0 formula errors. Re-tested: stale "Upcoming" bill with a past due date now shows Overdue; Paid bills and Draft/Paid invoices are not counted as overdue; a blank due date is not flagged overdue; staging row links a customer and a vendor correctly.
+
+---
+
 ## [1.0.0] — Macro-Free Edition
 
 ### Added

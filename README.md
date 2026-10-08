@@ -2,7 +2,7 @@
 ### A complete financial operating system for small businesses, built entirely in Microsoft Excel — no VBA, no macros.
 
 ![Status](https://img.shields.io/badge/status-v1.0%20Released-brightgreen)
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Version](https://img.shields.io/badge/version-1.0.1-blue)
 ![Platform](https://img.shields.io/badge/platform-Excel%20365%20%2F%202021%2B-217346)
 ![License](https://img.shields.io/badge/license-Commercial-lightgrey)
 
@@ -16,13 +16,15 @@ It was designed and built end-to-end following a real software product process: 
 
 ## Getting Started
 
-1. Download **Business Finance Pro v1.0.xlsx**
+1. Download **Business Finance Pro v1.0.1.xlsx**
 2. Open the workbook in Microsoft Excel 365 or Excel 2021.
 3. Enable editing if prompted.
 4. Review the included documentation for setup instructions and feature overview.
 5. Begin tracking your business finances using the dashboard and guided workflows.
 
 > No installation, macros, or add-ins are required.
+
+> **Note:** The workbook ships with sample data (dates are relative to today). Delete the sample rows in each data table before entering your real data.
 
 ## Why Excel?
 
@@ -54,7 +56,7 @@ BusinessFinancePro-Release/
 ├── LICENSE.md
 ├── CHANGELOG.md
 ├── RELEASE_NOTES_v1.0.md
-├── Business Finance Pro v1.0.xlsx              <- primary workbook               
+├── Business Finance Pro v1.0.1.xlsx              <- primary workbook               
 ├── docs/
 │   ├── Business-Finance-Pro-Documentation.pdf  <- full technical + user documentation
 │   └── architecture-diagram.mmd                <- Mermaid source, also renders on GitHub
@@ -75,8 +77,8 @@ BusinessFinancePro-Release/
 |---|---|
 | Sheets | 20 total — 6 visible, 14 hidden |
 | Excel Tables | 9 |
-| Named Ranges | 106 |
-| Formulas | 425 |
+| Named Ranges | 107 |
+| Formulas | 539 |
 | Data Validation Rules | 46 |
 | Conditional Formatting Rules | 31 |
 | Calculation Engines | 4 (`_calc_Core`, `_calc_Health`, `_calc_Attention`, `_calc_Insights`) |
