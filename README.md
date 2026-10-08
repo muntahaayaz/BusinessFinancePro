@@ -1,8 +1,8 @@
 # Business Finance Pro
 ### A complete financial operating system for small businesses, built entirely in Microsoft Excel — no VBA, no macros.
 
-![Status](https://img.shields.io/badge/status-v1.0.1%20Released-brightgreen)
-![Version](https://img.shields.io/badge/version-1.0.1-blue)
+![Status](https://img.shields.io/badge/status-v1.0.2%20Released-brightgreen)
+![Version](https://img.shields.io/badge/version-1.0.2-blue)
 ![Platform](https://img.shields.io/badge/platform-Excel%20365%20%2F%202021%2B-217346)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -16,7 +16,7 @@ It was designed and built end-to-end following a real software product process: 
 
 ## Getting Started
 
-1. Download **Business Finance Pro v1.0.1.xlsx**
+1. Download **Business Finance Pro v1.0.2.xlsx**
 2. Open the workbook in Microsoft Excel 365 or Excel 2021.
 3. Enable editing if prompted.
 4. Review the included documentation for setup instructions and feature overview.
@@ -42,9 +42,9 @@ The target user already has Excel, already trusts it, and won't install a new ap
 
 ## Project Status
 
-**Version 1.0.1 Released.**
+**Version 1.0.2 Released.**
 
-v1.0.1 is a bug-fix release on top of the first public release (v1.0). It fixes overdue status that stopped updating after a record was saved, sample data that went stale, and the Quick Add client lookup. The workbook has completed internal QA, documentation, and release packaging.
+v1.0.1 and v1.0.2 are bug-fix releases on top of the first public release (v1.0). Together they fix overdue status that stopped updating after a record was saved, sample data that went stale, the Quick Add client lookup, and navigation buttons that showed a security warning instead of switching screens. The workbook has completed internal QA, documentation, and release packaging.
 
 See [`CHANGELOG.md`](./CHANGELOG.md) for version history and [`docs/Business-Finance-Pro-Documentation.pdf`](./docs/Business-Finance-Pro-Documentation.pdf) for complete technical and user documentation.
 
@@ -56,7 +56,7 @@ BusinessFinancePro-Release/
 ├── LICENSE.md
 ├── CHANGELOG.md
 ├── RELEASE_NOTES_v1.0.md
-├── Business Finance Pro v1.0.1.xlsx            <- primary workbook
+├── Business Finance Pro v1.0.2.xlsx            <- primary workbook
 ├── docs/
 │   ├── Business-Finance-Pro-Documentation.pdf  <- full technical + user documentation
 │   └── architecture-diagram.mmd                <- Mermaid source, also renders on GitHub
@@ -104,7 +104,7 @@ Home Dashboard (presentation layer, formula-only)
 
 Full diagram: [`docs/architecture-diagram.mmd`](./docs/architecture-diagram.mmd)
 
-## Known Limitations (v1.0.1)
+## Known Limitations (v1.0.2)
 
 This is documented in full in the release notes and PDF documentation, but the headline item: every "add" screen (Quick Add, Bills, Clients, Goals) uses a manual staging-and-copy workflow to commit a new record, because native Excel formulas cannot write and reset themselves without VBA. This was a deliberate, documented architectural decision, not an oversight — see the Known Limitations section of the full documentation for the complete list.
 
@@ -176,4 +176,4 @@ Track savings and revenue goals with live progress monitoring.
 
 ---
 
-*Business Finance Pro v1.0.1 — Macro-Free Edition*
+*Business Finance Pro v1.0.2 — Macro-Free Edition*
