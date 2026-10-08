@@ -2,6 +2,17 @@
 
 All notable changes to Business Finance Pro are documented in this file.
 
+## [1.0.2] — Navigation fix
+
+### Fixed
+- **Navigation buttons did not work.** The nav bar links (Home, Quick Add, Bills, Clients, Goals, Insights) were stored as links to external files, so clicking one showed an Excel security warning and a path like `C:\Users\...\Home!A1` instead of switching screens. All 36 nav links across the six screens are now internal workbook links.
+- The **Insights** button used to go to Home; it now jumps to the "This week" insights section on the Home screen.
+
+### Tested
+- Recalculated with 0 formula errors; no other cell values changed.
+
+---
+
 ## [1.0.1] — Bug-fix release
 
 ### Fixed
