@@ -1,5 +1,15 @@
 # Business Finance Pro — Release Notes
-## Version 1.0.0 (Macro-Free Edition)
+## Version 1.0.3 (Macro-Free Edition)
+
+---
+
+## Updates since v1.0.0
+
+This document was first written for v1.0.0. Later releases are bug-fix and polish releases; see `CHANGELOG.md` for details.
+
+- **v1.0.1** — overdue/upcoming status now updates live; sample data dates are relative to today; Quick Add client lookup fixed and the dropdown includes customers.
+- **v1.0.2** — all navigation buttons fixed (they were stored as external file links and showed a security warning).
+- **v1.0.3** — blank forms no longer produce junk in the "Ready to save" rows; staging rows no longer show `#`; the currency symbol follows the Currency setting.
 
 ---
 
@@ -35,7 +45,7 @@ Both audit cycles are documented in full, including every test scenario run and 
 This release is fully functional but has four documented, intentional limitations — none are bugs, all were architectural decisions made and recorded during development:
 
 1. **Manual staging workflow.** Adding a transaction, bill, invoice, or goal requires copying a computed "staging row" and pasting it as values into the appropriate hidden table. Native Excel formulas cannot write and reset themselves; removing this step requires VBA or Office Scripts, which this release deliberately does not include.
-2. **Static currency symbol.** The Currency setting is stored and used correctly throughout the calculation engines, but every dollar amount on screen uses a hardcoded `$` — changing Currency does not change the displayed symbol.
+2. **Currency is a display symbol only.** Changing the Currency setting (USD, GBP, EUR, CAD, AUD, PKR) changes the symbol shown on screen, but amounts are not converted. (Before v1.0.3 the symbol was hardcoded to `$`.)
 3. **Partial Business Health scoring.** Two of five Business Health components (Cash Flow, Activity) are fully active. Three (Cash Runway, Bills, Invoices) exist as clearly labeled, architecturally-reserved placeholders — real data exists for Bills and Invoices, but activating their score contribution requires either extending `_calc_Core` or relaxing `_calc_Health`'s single-source-of-truth restriction, both deliberately deferred to a future release.
 4. **Single active goal visibility.** The Insights engine surfaces only the highest-priority Active goal; a second active goal is not currently mentioned.
 

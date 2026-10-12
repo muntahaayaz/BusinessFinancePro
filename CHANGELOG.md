@@ -2,6 +2,24 @@
 
 All notable changes to Business Finance Pro are documented in this file.
 
+## [1.0.3] — Polish release
+
+### Fixed
+- **Empty "Ready to save" rows filled with junk.** Leaving a form blank produced `0` values and a `01/00/1900` date in the row you copy into the table (Bills, Clients, Goals, Quick Add). The row now stays blank until the form is filled, and the "Ready to save" heading tells you to fill in the form first.
+- **Dates and amounts in the "Ready to save" rows showed `#`.** The spacer columns (E and I) on Bills, Clients and Goals were too narrow to show a date. They are now wide enough.
+- **Clients: the Due date in the "Ready to save" row was formatted as a currency amount.** It now shows as a date.
+- **Currency symbol was hardcoded to `$`.** Screens, the Home cards and the insight/attention sentences now follow the Currency setting. Supported: USD, GBP, EUR, CAD, AUD and PKR (added). This changes the symbol only; amounts are not converted.
+- **Product information** (Build number, Last updated) refreshed.
+
+### Changed
+- Named ranges: 107 -> 108 (`CurrencySymbol`). Conditional formatting rules: 31 -> 46 (currency number formats).
+- `rngCurrencies` extended to include PKR.
+
+### Tested
+- Recalculated with 0 formula errors. Re-tested USD, GBP, EUR and PKR (symbols in cards and sentences), empty vs filled forms on all four add screens, and that all other values and screens are unchanged.
+
+---
+
 ## [1.0.2] — Navigation fix
 
 ### Fixed

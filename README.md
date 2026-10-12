@@ -1,8 +1,8 @@
 # Business Finance Pro
 ### A complete financial operating system for small businesses, built entirely in Microsoft Excel — no VBA, no macros.
 
-![Status](https://img.shields.io/badge/status-v1.0.2%20Released-brightgreen)
-![Version](https://img.shields.io/badge/version-1.0.2-blue)
+![Status](https://img.shields.io/badge/status-v1.0.3%20Released-brightgreen)
+![Version](https://img.shields.io/badge/version-1.0.3-blue)
 ![Platform](https://img.shields.io/badge/platform-Excel%20365%20%2F%202021%2B-217346)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -16,7 +16,7 @@ It was designed and built end-to-end following a real software product process: 
 
 ## Getting Started
 
-1. Download **Business Finance Pro v1.0.2.xlsx**
+1. Download **Business Finance Pro v1.0.3.xlsx**
 2. Open the workbook in Microsoft Excel 365 or Excel 2021.
 3. Enable editing if prompted.
 4. Review the included documentation for setup instructions and feature overview.
@@ -37,16 +37,16 @@ The target user already has Excel, already trusts it, and won't install a new ap
 - **Bills & Subscriptions** — track what you owe, with automatic overdue detection
 - **Clients & Invoices** — track what you're owed
 - **Goals** — savings/revenue targets with live progress tracking
-- **Settings** — business profile and preferences, no raw data editing required
+- **Settings** — business profile and preferences, including the currency symbol (USD, GBP, EUR, CAD, AUD, PKR), with no raw data editing required
 - Four independent, rule-based calculation engines (Business Health, Needs Attention, Insights, and a shared metrics core) — formulas only, zero AI, zero macros
 
 ## Project Status
 
-**Version 1.0.2 Released.**
+**Version 1.0.3 Released.**
 
-v1.0.1 and v1.0.2 are bug-fix releases on top of the first public release (v1.0). Together they fix overdue status that stopped updating after a record was saved, sample data that went stale, the Quick Add client lookup, and navigation buttons that showed a security warning instead of switching screens. The workbook has completed internal QA, documentation, and release packaging.
+v1.0.1, v1.0.2 and v1.0.3 are bug-fix and polish releases on top of the first public release (v1.0). Together they fix overdue status that stopped updating after a record was saved, sample data that went stale, the Quick Add client lookup, navigation buttons that showed a security warning, junk values in empty "Ready to save" rows, and a hardcoded currency symbol. The workbook has completed internal QA, documentation, and release packaging.
 
-See [`CHANGELOG.md`](./CHANGELOG.md) for version history and [`docs/Business-Finance-Pro-Documentation.pdf`](./docs/Business-Finance-Pro-Documentation.pdf) for complete technical and user documentation.
+See [`CHANGELOG.md`](./CHANGELOG.md) for version history and [`docs/Business-Finance-Pro-Documentation.pdf`](./docs/Business-Finance-Pro-Documentation.pdf) for the original technical and user documentation (written for v1.0).
 
 ## Repository Structure
 
@@ -56,7 +56,7 @@ BusinessFinancePro-Release/
 ├── LICENSE.md
 ├── CHANGELOG.md
 ├── RELEASE_NOTES_v1.0.md
-├── Business Finance Pro v1.0.2.xlsx            <- primary workbook
+├── Business Finance Pro v1.0.3.xlsx           <- primary workbook
 ├── docs/
 │   ├── Business-Finance-Pro-Documentation.pdf  <- full technical + user documentation
 │   └── architecture-diagram.mmd                <- Mermaid source, also renders on GitHub
@@ -77,10 +77,10 @@ BusinessFinancePro-Release/
 |---|---|
 | Sheets | 20 total — 6 visible, 14 hidden |
 | Excel Tables | 9 |
-| Named Ranges | 107 |
-| Formulas | 539 |
+| Named Ranges | 108 |
+| Formulas | 543 |
 | Data Validation Rules | 46 |
-| Conditional Formatting Rules | 31 |
+| Conditional Formatting Rules | 46 |
 | Calculation Engines | 4 (`_calc_Core`, `_calc_Health`, `_calc_Attention`, `_calc_Insights`) |
 | Macros / VBA | None — 100% native Excel formulas |
 
@@ -104,9 +104,12 @@ Home Dashboard (presentation layer, formula-only)
 
 Full diagram: [`docs/architecture-diagram.mmd`](./docs/architecture-diagram.mmd)
 
-## Known Limitations (v1.0.2)
+## Known Limitations (v1.0.3)
 
-This is documented in full in the release notes and PDF documentation, but the headline item: every "add" screen (Quick Add, Bills, Clients, Goals) uses a manual staging-and-copy workflow to commit a new record, because native Excel formulas cannot write and reset themselves without VBA. This was a deliberate, documented architectural decision, not an oversight — see the Known Limitations section of the full documentation for the complete list.
+- **Manual staging-and-copy entry.** Every "add" screen (Quick Add, Bills, Clients, Goals) uses a manual staging-and-copy workflow to commit a new record, because native Excel formulas cannot write and reset themselves without VBA. This was a deliberate, documented architectural decision, not an oversight.
+- **Currency is a display symbol only.** Changing the Currency setting changes the symbol shown, but amounts are not converted.
+
+See `RELEASE_NOTES_v1.0.md` for the complete list.
 
 ## About This Project
 
@@ -176,4 +179,4 @@ Track savings and revenue goals with live progress monitoring.
 
 ---
 
-*Business Finance Pro v1.0.2 — Macro-Free Edition*
+*Business Finance Pro v1.0.3 — Macro-Free Edition*
