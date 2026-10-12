@@ -1,8 +1,8 @@
 # Business Finance Pro
 ### A complete financial operating system for small businesses, built entirely in Microsoft Excel — no VBA, no macros.
 
-![Status](https://img.shields.io/badge/status-v1.0.3%20Released-brightgreen)
-![Version](https://img.shields.io/badge/version-1.0.3-blue)
+![Status](https://img.shields.io/badge/status-v1.0.4%20Released-brightgreen)
+![Version](https://img.shields.io/badge/version-1.0.4-blue)
 ![Platform](https://img.shields.io/badge/platform-Excel%20365%20%2F%202021%2B-217346)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -16,7 +16,7 @@ It was designed and built end-to-end following a real software product process: 
 
 ## Getting Started
 
-1. Download **Business Finance Pro v1.0.3.xlsx**
+1. Download **Business Finance Pro v1.0.4.xlsx**
 2. Open the workbook in Microsoft Excel 365 or Excel 2021.
 3. Enable editing if prompted.
 4. Review the included documentation for setup instructions and feature overview.
@@ -25,6 +25,27 @@ It was designed and built end-to-end following a real software product process: 
 > No installation, macros, or add-ins are required.
 
 > **Note:** The workbook ships with sample data (dates are relative to today). Delete the sample rows in each data table before entering your real data.
+
+## How to save a record
+
+Every "add" screen (Quick Add, Bills, Clients, Goals) builds a **Ready to save** row. Because the workbook uses no macros, you save that row into the data table yourself. It takes about 30 seconds:
+
+1. Fill in the form. Select the **Ready to save** row (first column to last) and press **Ctrl+C**.
+2. Right-click any sheet tab, choose **Unhide**, and pick the data sheet for that screen:
+
+   | Screen | Data sheet to unhide |
+   |---|---|
+   | Quick Add | `_data_Transactions` |
+   | Bills | `_data_Bills` |
+   | Clients | `_data_Invoices` |
+   | Goals | `_data_Goals` |
+
+3. On the **Review** tab, click **Unprotect Sheet**. No password is needed.
+4. Click the first empty cell in column A, directly under the last row of the table. Right-click, choose **Paste Special**, then **Values**. The table grows by one row.
+5. Optional: **Review > Protect Sheet > OK**, then right-click the sheet tab and choose **Hide**.
+6. Go back to the Home screen. Your numbers are up to date.
+
+If the table does not grow, check that the sheet is unprotected and that you pasted directly below the last row.
 
 ## Why Excel?
 
@@ -42,9 +63,9 @@ The target user already has Excel, already trusts it, and won't install a new ap
 
 ## Project Status
 
-**Version 1.0.3 Released.**
+**Version 1.0.4 Released.**
 
-v1.0.1, v1.0.2 and v1.0.3 are bug-fix and polish releases on top of the first public release (v1.0). Together they fix overdue status that stopped updating after a record was saved, sample data that went stale, the Quick Add client lookup, navigation buttons that showed a security warning, junk values in empty "Ready to save" rows, and a hardcoded currency symbol. The workbook has completed internal QA, documentation, and release packaging.
+v1.0.1 to v1.0.4 are bug-fix and polish releases on top of the first public release (v1.0). Together they fix overdue status that stopped updating after a record was saved, sample data that went stale, the Quick Add client lookup, navigation buttons that showed a security warning, junk values in empty "Ready to save" rows, a hardcoded currency symbol, and hidden data sheets that needed a password to save a record (the password is gone and the steps are now documented below). The workbook has completed internal QA, documentation, and release packaging.
 
 See [`CHANGELOG.md`](./CHANGELOG.md) for version history and [`docs/Business-Finance-Pro-Documentation.pdf`](./docs/Business-Finance-Pro-Documentation.pdf) for the original technical and user documentation (written for v1.0).
 
@@ -56,7 +77,7 @@ BusinessFinancePro-Release/
 ├── LICENSE.md
 ├── CHANGELOG.md
 ├── RELEASE_NOTES_v1.0.md
-├── Business Finance Pro v1.0.3.xlsx           <- primary workbook
+├── Business Finance Pro v1.0.4.xlsx           <- primary workbook
 ├── docs/
 │   ├── Business-Finance-Pro-Documentation.pdf  <- full technical + user documentation
 │   └── architecture-diagram.mmd                <- Mermaid source, also renders on GitHub
@@ -104,7 +125,7 @@ Home Dashboard (presentation layer, formula-only)
 
 Full diagram: [`docs/architecture-diagram.mmd`](./docs/architecture-diagram.mmd)
 
-## Known Limitations (v1.0.3)
+## Known Limitations (v1.0.4)
 
 - **Manual staging-and-copy entry.** Every "add" screen (Quick Add, Bills, Clients, Goals) uses a manual staging-and-copy workflow to commit a new record, because native Excel formulas cannot write and reset themselves without VBA. This was a deliberate, documented architectural decision, not an oversight.
 - **Currency is a display symbol only.** Changing the Currency setting changes the symbol shown, but amounts are not converted.
@@ -179,4 +200,4 @@ Track savings and revenue goals with live progress monitoring.
 
 ---
 
-*Business Finance Pro v1.0.3 — Macro-Free Edition*
+*Business Finance Pro v1.0.4 — Macro-Free Edition*

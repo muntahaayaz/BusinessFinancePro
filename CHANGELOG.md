@@ -2,6 +2,22 @@
 
 All notable changes to Business Finance Pro are documented in this file.
 
+## [1.0.4] — Saving a record
+
+### Fixed
+- **Saving a record required a password nobody knew.** The "Ready to save" row has to be pasted into a hidden data sheet, but those sheets were password-protected and the password was not documented. The 14 hidden sheets are still protected, but without a password, so **Review > Unprotect Sheet** works with one click.
+
+### Added
+- README: new **How to save a record** section with the exact steps and which data sheet belongs to which screen.
+
+### Changed
+- Version, Build number and Last updated refreshed. No formulas or visible screens changed.
+
+### Tested
+- Recalculated with 0 formula errors. All 14 hidden sheets are protected without a password; the five visible screens keep their protection.
+
+---
+
 ## [1.0.3] — Polish release
 
 ### Fixed
