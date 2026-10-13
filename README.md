@@ -67,7 +67,7 @@ The target user already has Excel, already trusts it, and won't install a new ap
 
 v1.0.1 to v1.0.4 are bug-fix and polish releases on top of the first public release (v1.0). Together they fix overdue status that stopped updating after a record was saved, sample data that went stale, the Quick Add client lookup, navigation buttons that showed a security warning, junk values in empty "Ready to save" rows, a hardcoded currency symbol, and hidden data sheets that needed a password to save a record (the password is gone and the steps are now documented below). The workbook has completed internal QA, documentation, and release packaging.
 
-See [`CHANGELOG.md`](./CHANGELOG.md) for version history and [`docs/Business-Finance-Pro-Documentation.pdf`](./docs/Business-Finance-Pro-Documentation.pdf) for the original technical and user documentation (written for v1.0).
+See [`CHANGELOG.md`](./CHANGELOG.md) for version history and [`docs/Business-Finance-Pro-Documentation.pdf`](./docs/Business-Finance-Pro-Documentation.pdf) for the complete technical and user documentation (updated for v1.0.4).
 
 ## Repository Structure
 
