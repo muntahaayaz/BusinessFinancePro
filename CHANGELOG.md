@@ -2,6 +2,19 @@
 
 All notable changes to Business Finance Pro are documented in this file.
 
+## [1.0.5] — Goals text fix
+
+### Fixed
+- **Goals: the progress text was cut off.** On the Goals screen the progress label (for example `$5,580 of $9,000 (62%)`) was clipped at the right edge by the Target date column, and longer currency symbols such as PKR made it worse. The label now shrinks to fit its cell, so the full text is always visible.
+
+### Changed
+- Version, Build number and Last updated refreshed. No formulas or other screens changed.
+
+### Tested
+- Recalculated with 0 formula errors. Compared the Goals screen in PKR before and after the change: the full label is now visible. All other cell values are unchanged.
+
+---
+
 ## [1.0.4] — Saving a record
 
 ### Fixed

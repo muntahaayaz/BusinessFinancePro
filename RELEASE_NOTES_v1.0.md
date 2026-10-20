@@ -1,5 +1,5 @@
 # Business Finance Pro — Release Notes
-## Version 1.0.4 (Macro-Free Edition)
+## Version 1.0.5 (Macro-Free Edition)
 
 ---
 
@@ -9,6 +9,7 @@ This document was first written for v1.0.0. Later releases are bug-fix and polis
 
 - **v1.0.1** — overdue/upcoming status now updates live; sample data dates are relative to today; Quick Add client lookup fixed and the dropdown includes customers.
 - **v1.0.2** — all navigation buttons fixed (they were stored as external file links and showed a security warning).
+- **v1.0.5** — the progress label on the Goals screen no longer gets cut off.
 - **v1.0.4** — the hidden data sheets no longer have a password, and the steps for saving a record are documented in the README ("How to save a record").
 - **v1.0.3** — blank forms no longer produce junk in the "Ready to save" rows; staging rows no longer show `#`; the currency symbol follows the Currency setting.
 
