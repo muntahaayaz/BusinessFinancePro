@@ -45,7 +45,7 @@ Every "add" screen (Quick Add, Bills, Clients, Goals) builds a **Ready to save**
 5. Optional: **Review > Protect Sheet > OK**, then right-click the sheet tab and choose **Hide**.
 6. Go back to the Home screen. Your numbers are up to date.
 
-If the table does not grow, check that the sheet is unprotected and that you pasted directly below the last row.
+If the table does not grow by itself, check that the sheet is unprotected and that you pasted directly below the last row. If it still does not grow, click inside the table, go to **Table Design > Resize Table** (called **Design** in older versions of Excel), and extend the range so it includes the new row.
 
 ## Why Excel?
 
